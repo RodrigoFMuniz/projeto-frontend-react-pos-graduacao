@@ -2,15 +2,26 @@
 
 ## Estrutura de arquivos
  ### src 
- > ### assets 
+ > ### assets   
+ > - Imagens
+ > - Fontes
+ > - Medias
+ > - Ativos em geral
 
  > ### Components
+ > - Componetes que não são views
 
  > ### Config
+ > - Cliente http
+ > - Start bootstrapping
+ > - jsonconfig
+ > - pluggins
 
  > ### Services
+ > - API's
 
  > ### Views
+ > - views do projeto
 
 
 
