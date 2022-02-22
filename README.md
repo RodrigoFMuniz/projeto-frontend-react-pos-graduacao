@@ -1,5 +1,16 @@
 # Anime API consumption With react js
 
+## Estrutura de arquivos
+ ### src 
+ > ### assets 
+
+ > ### Components
+
+ > ### Config
+
+ > ### Services
+
+ > ### Views
 
 
 
