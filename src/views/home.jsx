@@ -1,7 +1,10 @@
+import { Link } from "@reach/router"
+
 const Home = ()=>{
   return (
     <>
-      Home
+      <h1>Home</h1>
+      <Link to='sobre'>Sobre</Link>
     </>
   )
 }
