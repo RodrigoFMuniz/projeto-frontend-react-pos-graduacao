@@ -1,0 +1,130 @@
+{
+  "personData":[
+    {
+      "id":1,
+      "name": "Rodrigo",
+      "surname":"Fernandes Muniz",
+      "email":"rodrigo.muniz@al.infnet.edu.br",
+      "address_id": 1,
+      "phone_id":null,
+      "driveLicense_id": [null],
+      "socialNetwork_id":[null],
+      "interests_id":[null],
+      "languages_id": [null],
+      "skills_id":[null],
+      "references_id":[null],
+      "workXp_id":[null],
+      "education_id":[null]
+    }
+  ],
+  "address":[
+    {"id":1,
+      "line1":"something",
+      "num":1,
+      "additionalInfo":"addInfo",
+      "district":"district",
+      "city":"city",
+      "state":"state",
+      "country":"country",
+      "zipCode":"00000000"
+    }
+  ],
+  "phone":[
+    {
+      "id":1,
+      "ddi":"01",
+      "ddd":"01",
+      "phone_num":"999999999",
+      "type":"cellphone"
+    }
+  ],
+  "driveLicense":[
+    {
+      "id":1,
+      "category":"A",
+      "status":"active",
+      "type":"professional",
+      "origin":"Referrer mock origin"
+    }
+  ],
+  "socialNetowork":[
+    {
+      "id":1,
+      "networkName":"network_mock",
+      "networkLink":"www.google.com/mock",
+      "networkPicture":"mock to picture stream",
+      "professional":"true"
+    }
+  ],
+  "interests":[
+    {
+      "id":1,
+      "interstName":"Interest mock name"
+    }
+  ],
+  "languages":[
+    {
+      "id":1,
+      "langName":"Portuguese mock name",
+      "langSkillLevel_id": 1 
+    }
+  ],
+  "langSkillLevel":[
+    {
+      "id":1,
+      "conversation":4,
+      "reading":4,
+      "writing":4,
+      "listening":4
+    }
+  ],
+  "skills":[
+    {
+      "id":1,
+      "skillName":"Skill mock name",
+      "skillLevel":5,
+      "skillCategory_Id":1
+    }
+  ],
+  "skillCategory":[
+    {
+      "id":1,
+      "skillCategoryName":"Category mock name"
+    }
+  ],
+  "references":[
+    {
+      "id":1,
+      "referrerName":"A random person",
+      "phone_id": 2,
+      "email":"somerandompersonemail@email.com",
+      "recommendationText":"Somen random text recommendation"
+    }
+  ],
+  "experience":[
+    {
+      "id":1,
+      "initDate": "Utc init Date",
+      "endDate": "Utc end Date ",
+      "professionalInstitute":"random place name",
+      "role":"random role name",
+      "roleDescription":"Some random description"
+    }
+  ],
+  "education":[
+    {
+      "id":1,
+      "initDate":"Utc init Date",
+      "endDate":"Utc end Date ",
+      "educationIstitute":"some random educational institute name",
+      "grade_id":1,
+      "graduationName":"Some random graduation name"
+    }
+  ],
+  "grade":[
+    {
+      "id":1,
+      "gradeName":"Degree grade mock name"
+    }
+  ]
+}
