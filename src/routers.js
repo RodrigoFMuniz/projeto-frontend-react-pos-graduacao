@@ -1,17 +1,12 @@
 // import React from 'react'
 import { Router } from '@reach/router'
-
-//views
-import Home from './views/home'
-import Sobre from './views/sobre'
+import Views from './views'
 
 const Routers = ()=>{
   return (
-    <Router>
-     <Home path="/" />
-     <Sobre path="sobre" />
-    </Router>
+   <Router>
+     <Views path="/*" />
+   </Router>
   )
-
 }
 export default Routers;
