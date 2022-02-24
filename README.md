@@ -1,4 +1,4 @@
-# Anime API consumption With react js
+# Curriculum Vitae creation tool with react js
 
 ## Estrutura de arquivos
  ### src 
