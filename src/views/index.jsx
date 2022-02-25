@@ -5,12 +5,12 @@ import Sobre from "./sobre"
 
 const Views = ()=>{
   return (
-    <Layout path="/">
-      <Router >
-        <Home path="/"/>
-        <Sobre path="sobre" />
-      </Router>
-    </Layout>
+      <Layout path="/">
+        <Router >
+          <Home path="/"/>
+          <Sobre path="sobre" />
+        </Router>
+      </Layout>
   )
 }
 

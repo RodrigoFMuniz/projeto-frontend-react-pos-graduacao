@@ -1,15 +1,20 @@
 // import styled from 'styled-components'
+import {Container, Row} from 'reactstrap'
 import Header from './header'
 import Footer from './footer'
 
 const Layout = ({children})=>{
   return (
     <>
-      <Header />
-        <main>
-          {children}
-        </main>
-      <Footer />
+      <Container>
+        <Row>
+           <Header />
+        </Row>
+          <main>
+            {children}
+          </main>
+        <Footer />
+      </Container>
     </>
   )
 }
