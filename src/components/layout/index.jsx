@@ -1,5 +1,4 @@
 // import styled from 'styled-components'
-// import './index.css'
 import Header from './header'
 import Footer from './footer'
 

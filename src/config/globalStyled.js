@@ -4,7 +4,7 @@ const GlobalStyle = createGlobalStyle`
   margin:0;
   padding:0;
   outline:none;
-  font-family:'Alata',sans-serif;
+  font-family:'PT Mono','Alata',monospace, sans-serif;
 }
 body,
 #root{
