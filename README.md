@@ -1,5 +1,4 @@
 # Anime API consumption With react js
-![ok](https://gist.github.com/RodrigoFMuniz/bfc35e744c171b18f0bd2115a4a0c9cf/:lock:)
 ## Estrutura de arquivos
  ### src 
  > ### assets   
