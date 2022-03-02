@@ -1,4 +1,6 @@
-import personal_data from '../assets/imgs/personal_data.svg'
+import styled from 'styled-components'
+import personal_data from '../assets/imgs/personal_data.jpg'
+import the_world from '../assets/imgs/the_world.jpg'
 // import {Link} from '@reach/router'
 import {Container,Row,Col} from 'reactstrap'
 import FormInput from "../components/generic_components/input"
@@ -11,10 +13,15 @@ const Home = ()=>{
         {/* <Link to='sobre'>Sobre</Link> */}
         <Container>
           <Row>
-            {/* <Col sm="6">
-              <Image src={personal_data} alt={"personal_data"} />
-            </Col> */}
-            <Col sm="8">
+            
+              <Col>
+              <hr />
+                <Title>Dados Pessoais</Title>                
+              </Col>
+        
+            </Row>
+          <Row>
+            <Col md="6" sm="12">
               <FormInput 
               placeholder={"Insira o seu nome"}
               type={"text"}
@@ -29,7 +36,34 @@ const Home = ()=>{
               placeholder={"Insira o seu email"}
               type={"email"}
               size={"12"}
-              label={"Email"} />
+              label={"Email"} />            
+              <FormInput 
+              placeholder={"Insira o seu telefone"}
+              type={"tel"}
+              size={"12"}
+              label={"Telefone"} />
+              <SubmitInput 
+              type={"submit"}
+              size={"4"}
+              label={"+ Telefone"}
+              color={"warning"}
+              />
+            </Col>
+            <Col md="6" sm="12" >
+              <Image src={personal_data} alt={"personal_data"} />
+            </Col>
+          </Row>
+          <Row>            
+            <Col>
+            <hr />
+              <Title>Endereço</Title>                
+            </Col>      
+          </Row>
+          <Row>
+            <Col md="6" sm="12" >
+              <Image src={the_world} alt={"personal_data"} />
+            </Col>
+            <Col md="6" sm="12">
               <FormInput 
               placeholder={"Insira o seu CEP"}
               type={"search"}
@@ -44,23 +78,38 @@ const Home = ()=>{
               <FormInput 
               placeholder={"Insira o número de sua casa"}
               type={"number"}
-              size={"12"}
+              size={"4"}
               label={"Número"} />
               <FormInput 
-              placeholder={"Insira o seu telefone"}
-              type={"tel"}
+              placeholder={"Bairro"}
+              type={"text"}
               size={"12"}
-              label={"Telefone"} />
-              <SubmitInput 
-              type={"submit"}
+              label={"Bairro"} />
+              <FormInput 
+              placeholder={"Cidade"}
+              type={"text"}
+              size={"12"}
+              label={"Cidade"} />
+              <FormInput 
+              placeholder={"Estado"}
+              type={"text"}
               size={"4"}
-              label={"+ Telefone"}
-              color={"warning"}
-              />
+              label={"Estado"} />
+              <FormInput 
+              placeholder={"País"}
+              type={"text"}
+              size={"8"}
+              label={"País"} />
             </Col>
-          </Row>
+
+          </Row>         
         </Container>
       </div>
   )
 }
 export default Home;
+
+const Title = styled.div`
+  font-size: 1.2rem;
+  margin-bottom:2rem;
+`

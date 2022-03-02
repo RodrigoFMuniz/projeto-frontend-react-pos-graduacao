@@ -1,5 +1,5 @@
 import { Input,Form, FormGroup,Label,Row,Col } from "reactstrap";
-// import styled from "styled-components";
+import styled from "styled-components";
 
 const FormInput = ({placeholder, type, label, size, spr})=>{
   return (

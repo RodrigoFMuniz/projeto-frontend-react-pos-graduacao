@@ -12,4 +12,5 @@ export default Image
 const Img = styled.img`
   width: 100%;
   object-fit: contain;
+  margin:1rem 0;
 `
