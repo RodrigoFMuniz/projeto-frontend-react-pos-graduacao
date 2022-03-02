@@ -17,6 +17,7 @@ const FooterContent = styled.footer`
   padding:10px;
   background-color:#8538e7;
   color:#fff;
-  font-family:'Special Forces''Alata',sans-serif;
+  font-family:'Special Forces','Alata',sans-serif;
+  margin-top:2rem;
 `
 
