@@ -9,7 +9,7 @@
  > - Ativos em geral
 
  > ### Components
- > - Componetes que não são views
+ > - Componentes que não são views
 
  > ### Config
  > - Cliente http
@@ -24,6 +24,11 @@
  > ### Views
  > - views do projeto
 
+## Pacotes
+1. Styledcomponents
+2. React-router-dom ou reach-router
+3. Reacstrap
+4. Axios
 
 
 
