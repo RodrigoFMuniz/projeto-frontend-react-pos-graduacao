@@ -34,12 +34,5 @@
 
 ## Video preliminar
 
-
-
-
-
-
-
-
 https://user-images.githubusercontent.com/45027394/156509559-6c92373f-35fc-4a86-a762-12ee9f52e393.mp4
 
