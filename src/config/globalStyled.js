@@ -4,13 +4,13 @@ const GlobalStyle = createGlobalStyle`
   margin:0;
   padding:0;
   outline:none;
-  font-family:'Allerta Stencil',monospace, sans-serif;
-  font-weight: bolder;
+  font-family:'Kodchasan',monospace, sans-serif;
+  font-weight: 700;
 }
 body,
 #root{
 height: 100vh;
-background-color: rgba(255,255,255,1);
+background-color: #E8F1FF;
 flex:1;
 }
 `

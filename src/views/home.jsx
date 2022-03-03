@@ -1,24 +1,20 @@
+
+import {Link} from '@reach/router'
 import styled from 'styled-components'
-import personal_data from '../assets/imgs/personal_data.jpg'
-import the_world from '../assets/imgs/the_world.jpg'
-// import {Link} from '@reach/router'
 import {Container,Row,Col} from 'reactstrap'
 import FormInput from "../components/generic_components/input"
 import Image from "../components/generic_components/img"
-import SubmitInput from "../components/generic_components/inputSubmit"
+import Button from "../components/generic_components/btn"
+import personal_data from '../assets/imgs/personal_data.jpg'
 
-const Home = ()=>{
+const Home = (props)=>{
   return (  
       <div>
-        {/* <Link to='sobre'>Sobre</Link> */}
-        <Container>
+        <CustomContainer>
           <Row>
-            
               <Col>
-              <hr />
                 <Title>Dados Pessoais</Title>                
               </Col>
-        
             </Row>
           <Row>
             <Col md="6" sm="12">
@@ -42,68 +38,22 @@ const Home = ()=>{
               type={"tel"}
               size={"12"}
               label={"Telefone"} />
-              <SubmitInput 
-              type={"submit"}
+              <Button 
               size={"4"}
-              label={"+ Telefone"}
-              color={"warning"}
-              />
+              type={"submit"}
+              label={"+ Telefone"} />
             </Col>
             <Col md="6" sm="12" >
               <Image src={personal_data} alt={"personal_data"} />
             </Col>
           </Row>
-          <Row>            
-            <Col>
-            <hr />
-              <Title>Endereço</Title>                
-            </Col>      
-          </Row>
           <Row>
-            <Col md="6" sm="12" >
-              <Image src={the_world} alt={"personal_data"} />
+            <Col sm="9"></Col>
+            <Col sm="3">
+              <CustomLink to='endereco'>Endereço</CustomLink>
             </Col>
-            <Col md="6" sm="12">
-              <FormInput 
-              placeholder={"Insira o seu CEP"}
-              type={"search"}
-              size={"6"}
-              spr={8}
-              label={"CEP"} />
-              <FormInput 
-              placeholder={"Insira o nome de sua rua"}
-              type={"text"}
-              size={"12"}
-              label={"Rua"} />
-              <FormInput 
-              placeholder={"Insira o número de sua casa"}
-              type={"number"}
-              size={"4"}
-              label={"Número"} />
-              <FormInput 
-              placeholder={"Bairro"}
-              type={"text"}
-              size={"12"}
-              label={"Bairro"} />
-              <FormInput 
-              placeholder={"Cidade"}
-              type={"text"}
-              size={"12"}
-              label={"Cidade"} />
-              <FormInput 
-              placeholder={"Estado"}
-              type={"text"}
-              size={"4"}
-              label={"Estado"} />
-              <FormInput 
-              placeholder={"País"}
-              type={"text"}
-              size={"8"}
-              label={"País"} />
-            </Col>
-
-          </Row>         
-        </Container>
+          </Row>
+        </CustomContainer>
       </div>
   )
 }
@@ -111,5 +61,23 @@ export default Home;
 
 const Title = styled.div`
   font-size: 1.2rem;
-  margin-bottom:2rem;
+  margin:1rem 0;
+  color:#C59D10;
 `
+const CustomLink = styled(Link)`
+  text-decoration:none;
+  font-weight: bold;
+  color: #6C63FF;
+  :hover{
+    color: #6C63aa;
+  }
+  :active{
+    color: #6C63FF;
+  }
+`
+const CustomContainer = styled(Container)`
+  background-color: #FFFFFF;
+  border-radius:10px;
+  padding:1rem 1rem;
+`
+
