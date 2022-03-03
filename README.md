@@ -30,4 +30,9 @@
 3. Reacstrap
 4. Axios
 
+## Inicializando a aplicação
 
+1. Navegue até D:\programacao\POS\projeto-base-pos\projeto pos github\src\services\api>
+2. Execute `npm start`
+3. Vá para D:\programacao\POS\projeto-base-pos\projeto pos github>
+4. Execute `npm start`
