@@ -1,3 +1,5 @@
+import {useState, useEffect} from 'react'
+import axios from 'axios'
 import {Link} from '@reach/router'
 import styled from 'styled-components'
 import {Container, Row, Col} from 'reactstrap'
@@ -6,6 +8,19 @@ import the_world from '../assets/imgs/the_world.jpg'
 import Image from "../components/generic_components/img"
 
 const Endereco = ()=>{
+  const [address, setAdrress] = useState({})
+
+
+  useEffect(()=>{
+    handleChangeAddress()
+  },[])
+  const handleChangeAddress = async(e)=>{
+    console.log(e.target.value)
+    const cepVal = e.target.value
+    const addressRes =  await axios.get(`https://viacep.com.br/ws/${cepVal}/json/`)
+    console.log(addressRes.data)
+    setAdrress(addressRes.data)
+  }
   return(
     <>
     <CustomContainer>
@@ -24,12 +39,16 @@ const Endereco = ()=>{
               type={"search"}
               size={"6"}
               spr={8}
-              label={"CEP"} />
+              label={"CEP"} 
+              onChange={handleChangeAddress}
+              value={address.cep} />
               <FormInput 
               placeholder={"Insira o nome de sua rua"}
               type={"text"}
               size={"12"}
-              label={"Rua"} />
+              label={"Rua"}
+              value={address.logradouro} 
+              />
               <FormInput 
               placeholder={"Insira o número de sua casa"}
               type={"number"}
@@ -39,22 +58,26 @@ const Endereco = ()=>{
               placeholder={"Bairro"}
               type={"text"}
               size={"12"}
-              label={"Bairro"} />
+              label={"Bairro"} 
+              value={address.bairro} />
               <FormInput 
               placeholder={"Cidade"}
               type={"text"}
               size={"12"}
-              label={"Cidade"} />
+              label={"Cidade"} 
+              value={address.localidade} />
               <FormInput 
               placeholder={"Estado"}
               type={"text"}
               size={"6"}
-              label={"Estado"} />
+              label={"Estado"} 
+              value={address.uf} />
               <FormInput 
               placeholder={"País"}
               type={"text"}
               size={"8"}
-              label={"País"} />
+              label={"País"} 
+              value={"BR"} />
             </Col>
           </Row>    
           <Row>

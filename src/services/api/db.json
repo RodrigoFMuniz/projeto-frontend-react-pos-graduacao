@@ -5,6 +5,9 @@
       "name": "Rodrigo",
       "surname":"Fernandes Muniz",
       "email":"rodrigo.muniz@al.infnet.edu.br",
+      "birth_date":"",
+      "gender_id":null,
+      "prefix":"",
       "address_id": 1,
       "phone_id":null,
       "driveLicense_id": [null],
@@ -15,6 +18,42 @@
       "references_id":[null],
       "workXp_id":[null],
       "education_id":[null]
+    }
+  ],
+  "gender":[
+    {
+      "id":1,
+      "value":"Masculino"
+    },
+    {
+      "id":2,
+      "value":"Feminino"
+    },
+    {
+      "id":3,
+      "value":"Outro"
+    }
+  ],
+  "prefix":[
+    {
+      "id":1,
+      "value":"Sr",
+      "gender_id":1
+    },
+    {
+      "id":2,
+      "value":"V.",
+      "gender_id":3
+    },
+    {
+      "id":3,
+      "value":"Sra",
+      "gender_id":2
+    },
+    {
+      "id":4,
+      "value":"Srta",
+      "gender_id":2
     }
   ],
   "address":[
@@ -47,7 +86,7 @@
       "origin":"Referrer mock origin"
     }
   ],
-  "socialNetowork":[
+  "socialNetwork":[
     {
       "id":1,
       "networkName":"network_mock",

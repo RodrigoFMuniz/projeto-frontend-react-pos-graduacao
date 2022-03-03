@@ -1,13 +1,36 @@
 
+import {useState, useEffect } from 'react'
 import {Link} from '@reach/router'
+import axios from 'axios'
 import styled from 'styled-components'
 import {Container,Row,Col} from 'reactstrap'
 import FormInput from "../components/generic_components/input"
 import Image from "../components/generic_components/img"
 import Button from "../components/generic_components/btn"
+import SelectGeneric from "../components/generic_components/select"
 import personal_data from '../assets/imgs/personal_data.jpg'
 
 const Home = (props)=>{
+  // const [personalData, setPersonalData]=useState({})
+  const [gender, setGender]=useState([])
+  const [abrev, setAbrev]=useState([])
+
+  const getGender = async () => {
+    const genderRes =  await axios.get("http://localhost:5000/gender")
+    console.log(genderRes.data)
+    setGender(genderRes.data)
+  }
+
+  const handleChangeGender = async(e)=>{
+    const idGender = e.target.value 
+    
+    const genderCateg = await axios.get(`http://localhost:5000/prefix?gender_id=${idGender}`)
+    setAbrev(genderCateg.data)
+  }
+
+  useEffect(()=>{
+    getGender()
+  },[])
   return (  
       <div>
         <CustomContainer>
@@ -28,6 +51,17 @@ const Home = (props)=>{
               type={"text"}
               size={"12"}
               label={"Sobrenome"} />
+              <SelectGeneric 
+              size={"4"}
+              id={"sexo"}
+              label={"Sexo"}
+              iteravel={gender} 
+              onChange={handleChangeGender}/>
+              <SelectGeneric 
+              size={"4"}
+              id={"abrev"}
+              label={"abrev"}
+              iteravel={abrev} />
               <FormInput 
               placeholder={"Insira o seu email"}
               type={"email"}
