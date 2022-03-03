@@ -31,8 +31,9 @@
 4. Axios
 
 
+## Inicializando a aplicação
 
-## Video preliminar
-
-https://user-images.githubusercontent.com/45027394/156509559-6c92373f-35fc-4a86-a762-12ee9f52e393.mp4
-
+1. Navegue até D:\programacao\POS\projeto-base-pos\projeto pos github\src\services\api>
+2. Execute `npm start`
+3. Vá para D:\programacao\POS\projeto-base-pos\projeto pos github>
+4. Execute `npm start`
