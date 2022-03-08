@@ -22,14 +22,21 @@ const Home = (props)=>{
   }
 
   const handleChangeGender = async(e)=>{
-    const idGender = e.target.value 
-    const genderCateg = await axios.get(`http://localhost:5000/prefix?gender_id=${idGender}`)
+    const {name,value} = e.target 
+    const genderCateg = await axios.get(`http://localhost:5000/prefix?gender_id=${value}`)
     setAbrev(genderCateg.data)
+    setPersonalData({
+      ...personalData,
+      [name]:value
+    })
   }
-
+  
   const handleChange = (e)=>{
     const {name, value} = e.target
-    set
+    setPersonalData({
+      ...personalData,
+      [name]:value
+    })
   }
 
   useEffect(()=>{
@@ -50,12 +57,14 @@ const Home = (props)=>{
               placeholder={"Insira o seu nome"}
               type={"text"}
               size={"12"}
-              label={"Nome"} />
+              label={"Nome"}
+              onChange={handleChange} />
               <FormInput 
               placeholder={"Insira o seu sobrenome"}
               type={"text"}
               size={"12"}
-              label={"Sobrenome"} />
+              label={"Sobrenome"}
+              onChange={handleChange} />
               <SelectGeneric 
               size={"4"}
               id={"sexo"}
@@ -66,21 +75,25 @@ const Home = (props)=>{
               size={"4"}
               id={"abrev"}
               label={"abrev"}
-              iteravel={abrev} />
+              iteravel={abrev} 
+              onChange={handleChange} />
               <FormInput 
               placeholder={"Insira o seu email"}
               type={"email"}
               size={"12"}
-              label={"Email"} />            
+              label={"Email"} 
+              onChange={handleChange} />            
               <FormInput 
               placeholder={"Insira o seu telefone"}
               type={"tel"}
               size={"12"}
-              label={"Telefone"} />
+              label={"Telefone"} 
+              onChange={handleChange} />
               <ButtonCustom 
               size={"4"}
               type={"submit"}
-              label={"+ Telefone"} />
+              label={"+ Telefone"} 
+              onChange={handleChange} />
             </Col>
             <Col md="6" sm="12" >
               <Image src={personal_data} alt={"personal_data"} />
@@ -101,6 +114,9 @@ const Home = (props)=>{
               </Button>
             </Col>
           </Row>
+          <hr />
+          {JSON.stringify(personalData)}
+          <hr />
         </CustomContainer>
       </div>
   )
