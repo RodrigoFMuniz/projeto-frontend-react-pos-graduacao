@@ -3,15 +3,15 @@ import {useState, useEffect } from 'react'
 import {Link} from '@reach/router'
 import axios from 'axios'
 import styled from 'styled-components'
-import {Container,Row,Col} from 'reactstrap'
+import {Container,Row,Col, Button} from 'reactstrap'
 import FormInput from "../components/generic_components/input"
 import Image from "../components/generic_components/img"
-import Button from "../components/generic_components/btn"
+import ButtonCustom from "../components/generic_components/btn"
 import SelectGeneric from "../components/generic_components/select"
 import personal_data from '../assets/imgs/personal_data.jpg'
 
 const Home = (props)=>{
-  // const [personalData, setPersonalData]=useState({})
+  const [personalData, setPersonalData]=useState({})
   const [gender, setGender]=useState([])
   const [abrev, setAbrev]=useState([])
 
@@ -23,14 +23,19 @@ const Home = (props)=>{
 
   const handleChangeGender = async(e)=>{
     const idGender = e.target.value 
-    
     const genderCateg = await axios.get(`http://localhost:5000/prefix?gender_id=${idGender}`)
     setAbrev(genderCateg.data)
+  }
+
+  const handleChange = (e)=>{
+    const {name, value} = e.target
+    set
   }
 
   useEffect(()=>{
     getGender()
   },[])
+
   return (  
       <div>
         <CustomContainer>
@@ -72,7 +77,7 @@ const Home = (props)=>{
               type={"tel"}
               size={"12"}
               label={"Telefone"} />
-              <Button 
+              <ButtonCustom 
               size={"4"}
               type={"submit"}
               label={"+ Telefone"} />
@@ -85,6 +90,15 @@ const Home = (props)=>{
             <Col sm="9"></Col>
             <Col sm="3">
               <CustomLink to='endereco'>Endereço</CustomLink>
+            </Col>
+          </Row>
+          <Row>
+            <Col xs="12">
+              <Button
+                color="danger"
+                >
+                Apresentar info
+              </Button>
             </Col>
           </Row>
         </CustomContainer>

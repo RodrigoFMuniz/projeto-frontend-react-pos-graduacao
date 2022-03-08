@@ -1,7 +1,7 @@
 import { Row, Col } from "reactstrap"
 import styled from "styled-components"
 
-const ButtonGen = (props)=>{
+const ButtonCustom = (props)=>{
   return(
     <>
     <Row>
@@ -12,7 +12,7 @@ const ButtonGen = (props)=>{
     </>
   )
 }
-export default ButtonGen
+export default ButtonCustom
 
 const CustomButton = styled.button`
   background: none;
