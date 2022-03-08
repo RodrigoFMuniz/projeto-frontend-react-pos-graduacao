@@ -36,3 +36,4 @@
 2. Execute `npm start`
 3. Vá para D:\programacao\POS\projeto-base-pos\projeto pos github>
 4. Execute `npm start`
+5. Abra o navegador, de preferência o Chrome, e digite:
