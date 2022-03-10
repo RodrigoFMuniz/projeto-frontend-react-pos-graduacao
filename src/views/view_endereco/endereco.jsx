@@ -1,6 +1,6 @@
 import {useState, useEffect} from 'react'
 import axios from 'axios'
-import {CustomContainer, CustomLink, Title } from './endereco.styles'
+import {CustomContainer, CustomLink, Title } from './endereco.styles' // Refatorar no futuro
 import {Row, Col} from 'reactstrap'
 import FormInput from "../../components/generic_components/generic_input/input"
 import the_world from '../../assets/imgs/the_world.jpg'

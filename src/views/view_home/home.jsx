@@ -1,9 +1,7 @@
-
 import {useState, useEffect } from 'react'
-import {Link} from '@reach/router'
 import axios from 'axios'
-import styled from 'styled-components'
-import {Container,Row,Col, Button} from 'reactstrap'
+import { Title, CustomContainer, CustomLink } from './home.styles' //Refatorar no futuro
+import {Row, Col, Button} from 'reactstrap'
 import FormInput from "../../components/generic_components/generic_input/input"
 import Image from "../../components/generic_components/generic_image/img"
 import ButtonCustom from "../../components/generic_components/generic_button/btn"
@@ -119,26 +117,4 @@ const Home = (props)=>{
   )
 }
 export default Home;
-
-const Title = styled.div`
-  font-size: 1.2rem;
-  margin:1rem 0;
-  color:#C59D10;
-`
-const CustomLink = styled(Link)`
-  text-decoration:none;
-  font-weight: bold;
-  color: #6C63FF;
-  :hover{
-    color: #6C63aa;
-  }
-  :active{
-    color: #6C63FF;
-  }
-`
-const CustomContainer = styled(Container)`
-  background-color: #FFFFFF;
-  border-radius:10px;
-  padding:1rem 1rem;
-`
 
