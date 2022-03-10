@@ -1,7 +1,7 @@
 import { Input,Form, FormGroup,Label,Row,Col } from "reactstrap";
 // import styled from "styled-components";
 
-const FormInput = ({onChange,placeholder, type, label, size, spr, value})=>{
+const FormInput = ({onChange,placeholder, type, label, size, max, value})=>{
   return (
     <>
         <Row>
@@ -14,7 +14,7 @@ const FormInput = ({onChange,placeholder, type, label, size, spr, value})=>{
                 placeholder={placeholder}
                 type={type}
                 value={value}
-                maxLength={spr}
+                maxLength={max}
                 onChange = {onChange}
               />
               <Label for={label}>

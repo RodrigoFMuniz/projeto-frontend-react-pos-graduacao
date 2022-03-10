@@ -3,9 +3,9 @@ import axios from 'axios'
 import {Link} from '@reach/router'
 import styled from 'styled-components'
 import {Container, Row, Col} from 'reactstrap'
-import FormInput from "../components/generic_components/input"
+import FormInput from "../components/generic_components/Generic_Input/input"
 import the_world from '../assets/imgs/the_world.jpg'
-import Image from "../components/generic_components/img"
+import Image from "../components/generic_components/Generic_Image/img"
 
 const Endereco = ()=>{
   const [address, setAdrress] = useState({})

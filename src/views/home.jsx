@@ -4,16 +4,17 @@ import {Link} from '@reach/router'
 import axios from 'axios'
 import styled from 'styled-components'
 import {Container,Row,Col, Button} from 'reactstrap'
-import FormInput from "../components/generic_components/input"
-import Image from "../components/generic_components/img"
-import ButtonCustom from "../components/generic_components/btn"
-import SelectGeneric from "../components/generic_components/select"
+import FormInput from "../components/generic_components/Generic_Input/input"
+import Image from "../components/generic_components/Generic_Image/img"
+import ButtonCustom from "../components/generic_components/Generic_Button/btn"
+import SelectGeneric from "../components/generic_components/Generic_Select/select"
 import personal_data from '../assets/imgs/personal_data.jpg'
 
 const Home = (props)=>{
   const [personalData, setPersonalData]=useState({})
   const [gender, setGender]=useState([])
   const [abrev, setAbrev]=useState([])
+
 
   const getGender = async () => {
     const genderRes =  await axios.get("http://localhost:5000/gender")
@@ -30,7 +31,7 @@ const Home = (props)=>{
       [name]:value
     })
   }
-  
+
   const handleChange = (e)=>{
     const {name, value} = e.target
     setPersonalData({
@@ -54,13 +55,11 @@ const Home = (props)=>{
           <Row>
             <Col md="6" sm="12">
               <FormInput 
-              placeholder={"Insira o seu nome"}
               type={"text"}
               size={"12"}
               label={"Nome"}
               onChange={handleChange} />
               <FormInput 
-              placeholder={"Insira o seu sobrenome"}
               type={"text"}
               size={"12"}
               label={"Sobrenome"}
@@ -78,13 +77,11 @@ const Home = (props)=>{
               iteravel={abrev} 
               onChange={handleChange} />
               <FormInput 
-              placeholder={"Insira o seu email"}
               type={"email"}
               size={"12"}
               label={"Email"} 
               onChange={handleChange} />            
               <FormInput 
-              placeholder={"Insira o seu telefone"}
               type={"tel"}
               size={"12"}
               label={"Telefone"} 
