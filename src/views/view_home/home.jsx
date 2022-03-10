@@ -1,6 +1,7 @@
 import {useState, useEffect } from 'react'
-import axios from 'axios'
-import { Title, CustomContainer, CustomLink } from './home.styles' //Refatorar no futuro
+import Presentation from '../../components/mock_presentation'
+import {getGender, getGenderCateg} from '../../services/home.service'
+import { Title, CustomContainer, CustomLink } from './home.styles' //Refatorar
 import {Row, Col, Button} from 'reactstrap'
 import FormInput from "../../components/generic_components/generic_input/input"
 import Image from "../../components/generic_components/generic_image/img"
@@ -12,22 +13,11 @@ const Home = (props)=>{
   const [personalData, setPersonalData]=useState({})
   const [gender, setGender]=useState([])
   const [abrev, setAbrev]=useState([])
+  const [showPresentation, setShowPresentation] = useState(false)
+  const [enableButton, setEnableButton] = useState(false)
 
-
-  const getGender = async () => {
-    const genderRes =  await axios.get("http://localhost:5000/gender")
-    console.log(genderRes.data)
-    setGender(genderRes.data)
-  }
-
-  const handleChangeGender = async(e)=>{
-    const {name,value} = e.target 
-    const genderCateg = await axios.get(`http://localhost:5000/prefix?gender_id=${value}`)
-    setAbrev(genderCateg.data)
-    setPersonalData({
-      ...personalData,
-      [name]:value
-    })
+  const handleClick = ()=>{
+    setShowPresentation(!showPresentation)
   }
 
   const handleChange = (e)=>{
@@ -39,17 +29,44 @@ const Home = (props)=>{
   }
 
   useEffect(()=>{
-    getGender()
+    const validateInputs =[
+      'Nome',
+      'Sobrenome',
+      'Sexo',
+      'abrev',
+      'Email',
+      'Telefone'
+    ]
+    const invalidForm = validateInputs.some((field)=> !personalData[field])
+    setEnableButton(invalidForm)
+  },[personalData])
+
+
+  useEffect(()=>{
+    ( async ()=>{
+    const gender = await getGender()
+    setGender(gender)
+    setAbrev([])
+    })()
   },[])
+
+  useEffect(()=>{
+    if(personalData?.Sexo){
+      (async ()=>{
+        const genderCateg = await getGenderCateg(personalData.Sexo)
+        setAbrev(genderCateg)
+      })()
+    }
+  },[personalData.Sexo])
 
   return (  
       <div>
         <CustomContainer>
           <Row>
-              <Col>
-                <Title>Dados Pessoais</Title>                
-              </Col>
-            </Row>
+            <Col>
+              <Title>Dados Pessoais</Title>                
+            </Col>
+          </Row>
           <Row>
             <Col md="6" sm="12">
               <FormInput 
@@ -67,12 +84,13 @@ const Home = (props)=>{
               id={"sexo"}
               label={"Sexo"}
               iteravel={gender} 
-              onChange={handleChangeGender}/>
+              onChange={handleChange}/>
               <SelectGeneric 
               size={"4"}
               id={"abrev"}
               label={"abrev"}
               iteravel={abrev} 
+              disabled = {abrev.length === 0}
               onChange={handleChange} />
               <FormInput 
               type={"email"}
@@ -104,14 +122,18 @@ const Home = (props)=>{
             <Col xs="12">
               <Button
                 color="danger"
+                disabled={enableButton}
+                onClick={handleClick}
                 >
                 Apresentar info
               </Button>
             </Col>
           </Row>
-          <hr />
-          {JSON.stringify(personalData)}
-          <hr />
+          <Row>
+            <Col xs="12">
+              {showPresentation && (<Presentation data={personalData}/>)}
+            </Col>
+          </Row>
         </CustomContainer>
       </div>
   )

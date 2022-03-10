@@ -12,6 +12,7 @@ const SelectGeneric = (props)=>{
               id={props.id}
               name={props.label}
               type="select"
+              disabled = {props.disabled}
               onChange={props.onChange}
             >
               <option>-Selecione-</option>
