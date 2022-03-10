@@ -1,5 +1,4 @@
 import { Input,Form, FormGroup,Label,Row,Col } from "reactstrap";
-// import styled from "styled-components";
 
 const FormInput = ({onChange,placeholder, type, label, size, max, value})=>{
   return (
