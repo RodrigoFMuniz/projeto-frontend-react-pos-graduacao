@@ -1,15 +1,13 @@
 import {useState, useEffect} from 'react'
 import axios from 'axios'
-import {Link} from '@reach/router'
-import styled from 'styled-components'
-import {Container, Row, Col} from 'reactstrap'
+import {CustomContainer, CustomLink, Title } from './endereco.styles'
+import {Row, Col} from 'reactstrap'
 import FormInput from "../../components/generic_components/generic_input/input"
 import the_world from '../../assets/imgs/the_world.jpg'
 import Image from "../../components/generic_components/generic_image/img"
 
 const Endereco = ()=>{
   const [address, setAdrress] = useState({})
-
 
   useEffect(()=>{
     handleChangeAddress()
@@ -101,26 +99,3 @@ const Endereco = ()=>{
 }
 
 export default Endereco
-
-const Title = styled.div`
-  font-size: 1.2rem;
-  margin:1rem 0;
-  color:#C59D10;
-`
-const CustomLink = styled(Link)`
-  text-decoration:none;
-  font-weight: bold;
-  color: #6C63FF;
-  :hover{
-    color: #6C63aa;
-  }
-  :active{
-    color: #6C63FF;
-  }
-`
-
-const CustomContainer = styled(Container)`
-  background-color: #FFFFFF;
-  border-radius:10px;
-  padding:1rem 1rem;
-`
