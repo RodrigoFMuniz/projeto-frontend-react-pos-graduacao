@@ -112,12 +112,13 @@ const Home = (props)=>{
               <Image src={personal_data} alt={"personal_data"} />
             </Col>
           </Row>
-          <Row>
+          {/* Próximas etapas da pós */}
+          {/* <Row>
             <Col sm="9"></Col>
             <Col sm="3">
               <CustomLink to='endereco'>Endereço</CustomLink>
             </Col>
-          </Row>
+          </Row> */}
           <Row>
             <Col xs="12">
               <Button

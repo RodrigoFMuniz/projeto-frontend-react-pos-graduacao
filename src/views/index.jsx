@@ -9,7 +9,7 @@ const Views = ()=>{
       <Layout path="/">
         <Router >
           <Home path="/"/>
-          <Endereco path="endereco" />
+          {/* <Endereco path="endereco" /> */}
           {/* <Sobre path="sobre" /> */}
         </Router>
       </Layout>
