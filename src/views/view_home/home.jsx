@@ -4,11 +4,11 @@ import {Link} from '@reach/router'
 import axios from 'axios'
 import styled from 'styled-components'
 import {Container,Row,Col, Button} from 'reactstrap'
-import FormInput from "../components/generic_components/generic_input/input"
-import Image from "../components/generic_components/generic_image/img"
-import ButtonCustom from "../components/generic_components/generic_button/btn"
-import SelectGeneric from "../components/generic_components/generic_select/select"
-import personal_data from '../assets/imgs/personal_data.jpg'
+import FormInput from "../../components/generic_components/generic_input/input"
+import Image from "../../components/generic_components/generic_image/img"
+import ButtonCustom from "../../components/generic_components/generic_button/btn"
+import SelectGeneric from "../../components/generic_components/generic_select/select"
+import personal_data from '../../assets/imgs/personal_data.jpg'
 
 const Home = (props)=>{
   const [personalData, setPersonalData]=useState({})
