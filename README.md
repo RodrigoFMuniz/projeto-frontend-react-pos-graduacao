@@ -7,8 +7,8 @@ O projeto intenciona oferecer um serviço de criação de curriculum vitae. O MV
 Foi mantida somente a primeira página de 6 programadas
 
 
-![imagem1](./src/assets/readme.assets/mock-pos-1.png)
-![imagem2](./src/assets/readme.assets/mock-pos-2.png)
+![imagem1](./src/assets/reademe.assets/mock-pos-1.png)
+![imagem2](./src/assets/reademe.assets/mock-pos-2.png)
 
 
 
