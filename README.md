@@ -31,6 +31,9 @@
 4. Axios
 
 
+
+
+
 ## Inicializando a aplicação
 1. Navegue até D:\programacao\POS\projeto-base-pos\projeto pos github\src\services\api>
 2. Execute `npm start`
